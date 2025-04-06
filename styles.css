@@ -1,0 +1,67 @@
+* {
+    cursor: url("assets/cursor.cur"), auto;
+}
+
+body {
+    /* background-color: hsl(0 0% 93.3%);
+    color: hsl(210 3.4% 23.1%);
+
+    font-family: ui-sans-serif,
+        system-ui,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        Segoe UI Symbol,
+        "Noto Color Emoji"; */
+
+    background-image: url("assets/sky.gif");
+    background-repeat: repeat;
+
+    color: black;
+}
+
+/* .rainbow {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+    background-image: gradient(linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2), color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+} */
+
+.rainbow {
+    /* Use a linear-gradient background with multiple color stops to create a rainbow effect */
+    background: linear-gradient(90deg,
+            red,
+            orange,
+            yellow,
+            green,
+            blue,
+            indigo,
+            violet,
+            red);
+
+    /* Make the gradient big so we can animate its movement */
+    background-size: 800% 100%;
+
+    /* Clip the background to the text so we can see the gradient through the text only */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Needed for Safari */
+
+    /* Standard text-fill for other browsers (ensures text remains transparent) */
+    color: transparent;
+
+    /* Animate the movement of the gradient */
+    animation: rainbow-move 5s linear infinite;
+}
+
+/* Keyframes that shift the background gradient horizontally */
+@keyframes rainbow-move {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
