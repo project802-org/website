@@ -3,21 +3,12 @@
 }
 
 body {
-    /* background-color: hsl(0 0% 93.3%);
-    color: hsl(210 3.4% 23.1%);
-
-    font-family: ui-sans-serif,
-        system-ui,
-        sans-serif,
-        "Apple Color Emoji",
-        "Segoe UI Emoji",
-        Segoe UI Symbol,
-        "Noto Color Emoji"; */
-
     background-image: url("assets/sky.gif");
     background-repeat: repeat;
 
     color: black;
+
+    font-family: "Times New Roman", Times, serif;
 }
 
 /* .rainbow {
@@ -29,7 +20,7 @@ body {
 } */
 
 .rainbow {
-    /* Use a linear-gradient background with multiple color stops to create a rainbow effect */
+    /* Linear-gradient with a classic rainbow */
     background: linear-gradient(90deg,
             red,
             orange,
@@ -39,23 +30,18 @@ body {
             indigo,
             violet,
             red);
-
-    /* Make the gradient big so we can animate its movement */
+    /* Make the gradient wide enough for smooth animation */
     background-size: 800% 100%;
 
-    /* Clip the background to the text so we can see the gradient through the text only */
+    /* Show the gradient only through the text */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    /* Needed for Safari */
-
-    /* Standard text-fill for other browsers (ensures text remains transparent) */
     color: transparent;
 
-    /* Animate the movement of the gradient */
-    animation: rainbow-move 5s linear infinite;
+    /* Slow down the movement by increasing the animation duration */
+    animation: rainbow-move 10s linear infinite;
 }
 
-/* Keyframes that shift the background gradient horizontally */
 @keyframes rainbow-move {
     0% {
         background-position: 0% 0%;
@@ -64,4 +50,44 @@ body {
     100% {
         background-position: 100% 0%;
     }
+}
+
+.gif-container {
+    position: relative;
+    display: inline-block;
+    /* Use inline-block or block depending on layout */
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+/* Hide the tooltip text by default */
+.hover-text {
+    visibility: hidden;
+    width: 240px;
+    /* adjust width if needed */
+    background-color: yellow;
+    /* your tooltip background color */
+    color: black;
+    /* tooltip text color */
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+
+    /* Position the tooltip */
+    position: absolute;
+    bottom: 100%;
+    /* Show the tooltip above the GIF */
+    left: 50%;
+    transform: translateX(-10%);
+
+    /* You can add a small arrow with CSS if desired */
+    opacity: 0;
+    /* for fade-in effect */
+    transition: opacity 0.3s;
+}
+
+/* Show the tooltip text on hover */
+.gif-container:hover .hover-text {
+    visibility: visible;
+    opacity: 1;
 }
