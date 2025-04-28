@@ -1,0 +1,95 @@
+* {
+    cursor: url("assets/heart.cur"), auto;
+}
+
+body {
+    background-image: url("assets/hearts.gif");
+    background-repeat: repeat;
+
+    color: #FF69B4;
+
+    font-family: "Times New Roman", Times, serif;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: blue;
+    /* or #0000EE for the “classic” default blue */
+    text-decoration: underline;
+    /* ensures underline for all link states */
+}
+
+.rainbow {
+    /* Linear-gradient with a classic rainbow */
+    background: linear-gradient(90deg,
+            red,
+            orange,
+            yellow,
+            green,
+            blue,
+            indigo,
+            violet,
+            red);
+    /* Make the gradient wide enough for smooth animation */
+    background-size: 800% 100%;
+
+    /* Show the gradient only through the text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    /* Slow down the movement by increasing the animation duration */
+    animation: rainbow-move 10s linear infinite;
+}
+
+@keyframes rainbow-move {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+.gif-container {
+    position: relative;
+    display: inline-block;
+    /* Use inline-block or block depending on layout */
+    cursor: pointer;
+    /* Show pointer on hover */
+}
+
+/* Hide the tooltip text by default */
+.hover-text {
+    visibility: hidden;
+    width: 240px;
+    /* adjust width if needed */
+    background-color: yellow;
+    /* your tooltip background color */
+    color: black;
+    /* tooltip text color */
+    text-align: center;
+    padding: 6px;
+    border-radius: 4px;
+
+    /* Position the tooltip */
+    position: absolute;
+    bottom: 100%;
+    /* Show the tooltip above the GIF */
+    left: 50%;
+    transform: translateX(-10%);
+
+    /* You can add a small arrow with CSS if desired */
+    opacity: 0;
+    /* for fade-in effect */
+    transition: opacity 0.3s;
+}
+
+/* Show the tooltip text on hover */
+.gif-container:hover .hover-text {
+    visibility: visible;
+    opacity: 1;
+}
