@@ -93,3 +93,25 @@ a:active {
     visibility: visible;
     opacity: 1;
 }
+
+.heart {
+    position: fixed;
+    /* stays tied to the viewport */
+    pointer-events: none;
+    /* won’t block clicks */
+    will-change: transform, opacity;
+    animation: float 1s ease-out forwards;
+    color: #ff6eb4;
+    /* hot‑pink default */
+    font-size: 18px;
+    transform: translate(-50%, -50%);
+    /* center on cursor */
+}
+
+/* Fancy “float up + shrink + fade” */
+@keyframes float {
+    to {
+        transform: translate(-50%, -90px) scale(0.4);
+        opacity: 0;
+    }
+}
