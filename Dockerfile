@@ -4,4 +4,4 @@ COPY . /www
 
 EXPOSE 8080
 
-CMD ["httpd", "-f", "-v", "-p", "80", "-h", "/www"]
+CMD ["httpd", "-f", "-v", "-p", "8080", "-h", "/www"]
